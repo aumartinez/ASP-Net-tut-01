@@ -1,0 +1,38 @@
+﻿@{
+    
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>My Site's Title</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    </head>
+    <body>
+		@RenderPage("header.cshtml")
+		
+		<h1>Hello Asp Net Web Page!</h1>
+		<p>The time is @DateTime.Now</p>
+		
+		<p>&nbsp;</p>
+		
+        <!--Single statement block-->
+		@{var myMessage = "Hello World";}
+		
+		<!--Inline expression or variable-->
+		<p>The value of myMessage is: @myMessage</p>
+		
+		<!--Multi statement block-->
+		@{
+			var greeting = "Welcome to our site! ";
+			var weekDay = DateTime.Now.DayOfWeek;
+			var greetingMessage = greeting + "Today is: " + weekDay;
+		}
+		
+		<p>The greeting is: @greetingMessage</p>
+		
+		@RenderPage("footer.cshtml")
+    </body>
+</html>
